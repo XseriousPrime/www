@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+<style>
+    body {
+        top: 100%;
+        left: 100%;
+        background-color: rebeccapurple;
+
+    }
+
+    #globe {
+        position: absolute;
+        top: 25vmin;
+        left: 25vmin;
+        width: 50vmin;
+        height: 50vmin;
+        border: 0.5px solid blue;
+        border-radius: 50%;
+        background-color: hsl(60, 100%, 50%);
+        background-image: linear-gradient(hsl(174, 64%, 71%), hsl(174, 64%, 30%));
+        overflow: hidden;
+
+    }
+
+    #base {
+        position: absolute;
+        top: 65vmin;
+        left: 25vmin;
+        width: 50vmin;
+        height: 20vmin;
+        background-color: lightcoral;
+        transform: perspective(3em) rotateX(9deg);
+        overflow: hidden;
+        border-radius: 10px;
+        border: 0.5px solid coral;
+    }
+
+    #floor { position: absolute;
+        top: 55vmin;
+        left: 0vmin;
+        width: 100%;
+        height: 50vmin;
+        background-color: hsl(180, 100%, 50%);
+        background-image: linear-gradient(hsl(24, 64%, 31%), hsl(14, 64%, 8%));
+    }
+
+    #s-body {
+        position: absolute;
+        top: 40%;
+        left: 40%;
+        width: 20%;
+        height: 20%;
+        background-color: orange;
+        border-radius: 10px;
+        animation: moveUP 2s ease-out infinite;
+    }
+
+    #s-top {
+        position: absolute;
+        top: 20%;
+        left: 41.5%;
+        width: 40%;
+        height: 30%;
+        background-color: orange;
+        clip-path: polygon(20% 20%, 40% 60%, 0 60%);
+        animation: moveUP 2s ease-out infinite;
+    }
+
+    #eye1 {
+        position: absolute;
+        top: 53%;
+        left: 39%;
+        width: 6%;
+        height: 6%;
+        background-color: white;
+        border-radius: 50%;
+        animation: eyeMOVE 2s ease-out infinite, closeEYE 2s infinite;
+    }
+
+    #eye2 {
+        position: absolute;
+        top: 53%;
+        left: 55%;
+        width: 6%;
+        height: 6%;
+        background-color: white;
+        border-radius: 50%;
+        animation: eyeMOVE 2s ease-out infinite, closeEYE 2s infinite;
+
+    }
+
+    #pupil1 {
+        position: absolute;
+        top: 55%;
+        left: 56%;
+        width: 4%;
+        height: 4%;
+        background-color: black;
+        border-radius: 50%;
+        animation: eyeMOVE 2s ease-out infinite, closeEYE 2s infinite;
+
+
+    }
+
+    #pupil2 {
+        position: absolute;
+        top: 55%;
+        left: 40%;
+        width: 4%;
+        height: 4%;
+        background-color: black;
+        border-radius: 50%;
+        animation: eyeMOVE 2s ease-out infinite, closeEYE 2s infinite;
+    }
+
+    @keyframes eyeMOVE {
+        0% {
+
+
+            top: 160px;
+
+        }
+
+        50% {
+
+            top: 230px;
+
+        }
+
+        100% {
+
+            top: 160px;
+
+            ;
+        }
+    }
+
+    #tent1 {
+        position: absolute;
+        top: 63%;
+        left: 40%;
+        width: 30%;
+        height: 30%;
+        background-color: orange;
+        clip-path: polygon(0 0, 20% 0, 10% 60%);
+        transform: rotateZ(20deg);
+        animation: tentMOVE 2s ease-out infinite;
+
+    }
+
+    #tent2 {
+        position: absolute;
+        top: 63%;
+        left: 48%;
+        width: 30%;
+        height: 30%;
+        background-color: orange;
+        clip-path: polygon(0 0, 20% 0, 10% 60%);
+        animation: tentMOVE 2s ease-out infinite;
+    }
+
+    #tent3 {
+        position: absolute;
+        top: 63%;
+        left: 55%;
+        width: 30%;
+        height: 30%;
+        background-color: orange;
+        clip-path: polygon(0 0, 20% 0, 10% 60%);
+        transform: rotateZ(-20deg);
+        animation: tentMOVE 2s ease-out infinite;
+    }
+
+    #fish1 {
+        position: absolute;
+        top: 15vmin;
+        left: 10vmin;
+        width: 5vmin;
+        height: 5vmin;
+        background-color: white;
+        clip-path: polygon(0 0, 10% 20%, 40% 10%, 70% 30%, 70% 40%, 40% 50%, 10% 40%, 0 60%);
+        animation: fishMOVE 8.5s ease-in-out infinite;
+    }
+
+
+
+
+    @keyframes fishMOVE {
+        0% {
+            background-color: red;
+            left: 0%;
+            top: 0px;
+
+        }
+
+        25% {
+            background-color: mediumvioletred;
+            left: 350px;
+            top: 60px;
+
+        }
+
+        50% {
+            background-color: lime;
+            left: 200px;
+            top: 200px;
+            transform: scaleX(-1);
+        }
+
+        75% {
+            background-color: purple;
+            left: 0px;
+            top: 200px;
+
+        }
+
+        100% {
+            background-color: rebeccapurple;
+            left: 0px;
+            top: 0px;
+
+        }
+    }
+
+    #fish2 {
+        position: absolute;
+        top: 15vmin;
+        left: 10vmin;
+        width: 10vmin;
+        height: 10vmin;
+        background-color: white;
+        clip-path: polygon(0 0, 10% 20%, 40% 10%, 70% 30%, 70% 40%, 40% 50%, 10% 40%, 0 60%);
+        animation: fishMOVE1 8.5s ease-in-out infinite;
+        ;
+    }
+
+    @keyframes fishMOVE1 {
+        0% {
+            background-color: black;
+            left: 30px;
+            top: 30px;
+
+        }
+
+        25% {
+            background-color: white;
+            left: 300px;
+            top: 0px;
+
+        }
+
+        50% {
+            background-color: black;
+            left: 70px;
+            top: 180px;
+            transform: scaleX(-1);
+            ;
+        }
+
+        75% {
+            background-color: white;
+            left: 30px;
+            top: 100px;
+
+        }
+
+        100% {
+            background-color: black;
+            left: 0px;
+            top: 0px;
+
+        }
+    }
+
+    #fish3 {
+        position: absolute;
+        top: 15vmin;
+        left: 10vmin;
+        width: 10vmin;
+        height: 10vmin;
+        background-color: white;
+        clip-path: polygon(0 0, 10% 20%, 40% 10%, 70% 30%, 70% 40%, 40% 50%, 10% 40%, 0 60%);
+        animation: fishMOVE2 8.5s ease-in-out infinite;
+        ;
+    }
+
+    @keyframes fishMOVE2 {
+        0% {
+            background-color: purple;
+            left: 400px;
+            top: 200px;
+            transform: scaleX(-1)
+        }
+
+        25% {
+            background-color: brown;
+            left: 100px;
+            top: 70px;
+            transform: scaleX(-1)
+        }
+
+        50% {
+            background-color: yellow;
+            left: 30px;
+            top: 50px;
+            transform: scaleX(-1);
+            ;
+        }
+
+        75% {
+            background-color: deeppink;
+            left: 100px;
+            top: 200px;
+
+        }
+
+        100% {
+            background-color: orangered;
+            left: 200px;
+            top: 300px;
+
+        }
+    }
+
+    /* SQUID BODY */
+    @keyframes moveUP {
+        0% {
+            transform: translateY(0);
+        }
+
+
+
+        50% {
+            transform: translateY(50%);
+        }
+
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+
+    /* SQUID BODY */
+    @keyframes moveUP {
+        0% {
+            transform: translateY(0);
+        }
+
+
+
+        50% {
+            transform: translateY(50%);
+        }
+
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    /* SQUID TENTECLES */
+    @keyframes tentMOVE {
+        from {
+            transform: rotateX(0deg);
+        }
+
+        50% {
+            transform: rotateX(-70deg);
+        }
+
+        to {
+            transform: rotateX(0deg);
+        }
+    }
+
+    /* SQUID TENTECLES */
+    @keyframes tentMOVE {
+        from {
+            transform: rotateX(0deg);
+        }
+
+        50% {
+            transform: rotateX(-70deg);
+        }
+
+        to {
+            transform: rotateX(0deg);
+        }
+    }
+
+    /* SQUID EYES */
+    /* @keyframes closeEYE {
+        from {
+            transform: scaleY(1);
+        }
+
+        50% {
+            transform: scaleY(0);
+        }
+
+        to {
+            transform: scaleY(1);
+        }
+
+    }
+*/
+</style>
+
+
+<body>
+     <div id="floor"></div>
+    <div id="globe">
+        <div id="squid">
+            <div id="fish1"></div>
+            <div id="fish2"></div>
+            <div id="fish3"></div>
+            <div id="s-body"></div>
+            <div id="s-top"></div>
+            <div id="eye1" class="eyes"></div>
+            <div id="eye2" class="eyes"></div>
+            <div id="pupil1" class="eyes"></div>
+            <div id="pupil2" class="eyes"></div>
+            <div id="tent1" class="tentecles"></div>
+            <div id="tent2" class="tentecles"></div>
+            <div id="tent3" class="tentecles"></div>
+            
+        </div>
+    </div>
+    <div id="base"></div>
+
+</body>
+
+</html>
