@@ -22,6 +22,7 @@
         background-color: hsl(60, 100%, 50%);
         background-image: linear-gradient(hsl(174, 64%, 71%), hsl(174, 64%, 30%));
         overflow: hidden;
+        transform: translateX(50% -50%);
 
     }
 
@@ -38,11 +39,12 @@
         border: 0.5px solid coral;
     }
 
-    #floor { position: absolute;
+    #floor {
+        position: absolute;
         top: 55vmin;
         left: 0vmin;
         width: 100%;
-        height: 50vmin;
+        height: 100%;
         background-color: hsl(180, 100%, 50%);
         background-image: linear-gradient(hsl(24, 64%, 31%), hsl(14, 64%, 8%));
     }
@@ -77,7 +79,7 @@
         height: 6%;
         background-color: white;
         border-radius: 50%;
-        animation: eyeMOVE 2s ease-out infinite, closeEYE 2s infinite;
+        animation:  eyeMOVE 2s ease-out infinite, closeEYE 2s  5s 4;
     }
 
     #eye2 {
@@ -88,7 +90,7 @@
         height: 6%;
         background-color: white;
         border-radius: 50%;
-        animation: eyeMOVE 2s ease-out infinite, closeEYE 2s infinite;
+        animation: eyeMOVE 2s ease-out infinite, closeEYE 2s 5s 4;
 
     }
 
@@ -100,7 +102,7 @@
         height: 4%;
         background-color: black;
         border-radius: 50%;
-        animation: eyeMOVE 2s ease-out infinite, closeEYE 2s infinite;
+        animation: eyeMOVE 2s ease-out infinite, closeEYE 2s  5s 4;
 
 
     }
@@ -113,31 +115,10 @@
         height: 4%;
         background-color: black;
         border-radius: 50%;
-        animation: eyeMOVE 2s ease-out infinite, closeEYE 2s infinite;
+        animation: eyeMOVE 2s ease-out infinite, closeEYE 2s  5s 4;
     }
 
-    @keyframes eyeMOVE {
-        0% {
-
-
-            top: 160px;
-
-        }
-
-        50% {
-
-            top: 230px;
-
-        }
-
-        100% {
-
-            top: 160px;
-
-            ;
-        }
-    }
-
+   
     #tent1 {
         position: absolute;
         top: 63%;
@@ -234,7 +215,6 @@
         background-color: white;
         clip-path: polygon(0 0, 10% 20%, 40% 10%, 70% 30%, 70% 40%, 40% 50%, 10% 40%, 0 60%);
         animation: fishMOVE1 8.5s ease-in-out infinite;
-        ;
     }
 
     @keyframes fishMOVE1 {
@@ -325,24 +305,6 @@
         }
     }
 
-    /* SQUID BODY */
-    @keyframes moveUP {
-        0% {
-            transform: translateY(0);
-        }
-
-
-
-        50% {
-            transform: translateY(50%);
-        }
-
-
-        100% {
-            transform: translateY(0);
-        }
-    }
-
 
     /* SQUID BODY */
     @keyframes moveUP {
@@ -377,23 +339,9 @@
         }
     }
 
-    /* SQUID TENTECLES */
-    @keyframes tentMOVE {
-        from {
-            transform: rotateX(0deg);
-        }
-
-        50% {
-            transform: rotateX(-70deg);
-        }
-
-        to {
-            transform: rotateX(0deg);
-        }
-    }
 
     /* SQUID EYES */
-    /* @keyframes closeEYE {
+    @keyframes closeEYE {
         from {
             transform: scaleY(1);
         }
@@ -406,13 +354,24 @@
             transform: scaleY(1);
         }
 
+    } 
+     @keyframes eyeMOVE {
+        0% 100% {
+            transform: translateY(0);
+        }
+
+   
+
+        50% {
+            transform: translateY(10px);
+        }
     }
-*/
+
 </style>
 
 
 <body>
-     <div id="floor"></div>
+    <div id="floor"></div>
     <div id="globe">
         <div id="squid">
             <div id="fish1"></div>
@@ -427,7 +386,7 @@
             <div id="tent1" class="tentecles"></div>
             <div id="tent2" class="tentecles"></div>
             <div id="tent3" class="tentecles"></div>
-            
+
         </div>
     </div>
     <div id="base"></div>
