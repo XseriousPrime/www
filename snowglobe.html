@@ -2,6 +2,7 @@
 <html>
 
 <head>
+<link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
 </head>
 <style>
     body {
@@ -37,7 +38,22 @@
         overflow: hidden;
         border-radius: 10px;
         border: 0.5px solid coral;
+        text-align: center;
+        font-size: 20px;
+        font-family: 'Chewy', cursive;
+        
     }
+        #ground { 
+        position: absolute;
+        top: 70%;
+        left: 0%;
+        width: 100%;
+        height: 20%;
+        background-color: paleturquoise;
+      
+        
+    }
+
 
     #floor {
         position: absolute;
@@ -47,6 +63,34 @@
         height: 100%;
         background-color: hsl(180, 100%, 50%);
         background-image: linear-gradient(hsl(24, 64%, 31%), hsl(14, 64%, 8%));
+    }
+    #rock1 {
+         position: absolute;
+        top: 60%;
+        left: 0%;
+        width: 30%;
+        height: 20%;
+        background-color:brown; 
+        border-radius: 40%;
+    }
+      #rock2 {
+         position: absolute;
+        top: 67%;
+        left: 60%;
+        width: 50%;
+        height: 20%;
+        background-color:seagreen; 
+        border-radius: 50%;
+ 
+    }
+      #rock3 {
+         position: absolute;
+        top: 60%;
+        left: 0%;
+        width: 30%;
+        height: 20%;
+        background-color:brown; 
+        border-radius: 40%;
     }
 
     #s-body {
@@ -304,6 +348,56 @@
 
         }
     }
+ #fish4 {
+        position: absolute;
+        top: 15vmin;
+        left: 10vmin;
+        width: 25vmin;
+        height: 10vmin;
+        background-color: white;
+        clip-path: polygon(0 0, 10% 20%, 40% 10%, 70% 30%, 70% 40%, 40% 50%, 10% 40%, 0 60%);
+        animation: fishMOVE3 8.5s ease-in-out infinite;
+    }
+
+
+
+
+    @keyframes fishMOVE3 {
+        0% {
+            background-color: pink;
+            left: 10px;
+            top: 150px;
+
+        }
+
+        25% {
+            background-color: green;
+            left: 20px;
+            top: -30px;
+
+        }
+
+        50% {
+            background-color: lime;
+            left: 200px;
+            top: 200px;
+            transform: scaleX(-1);
+        }
+
+        75% {
+            background-color: red;
+            left: 0px;
+            top: 200px;
+
+        }
+
+        100% {
+            background-color: rebeccapurple;
+            left: 0px;
+            top: -40px;
+
+        }
+    }
 
 
     /* SQUID BODY */
@@ -331,7 +425,7 @@
         }
 
         50% {
-            transform: rotateX(-70deg);
+            transform: rotateX(-80deg);
         }
 
         to {
@@ -342,16 +436,16 @@
 
     /* SQUID EYES */
     @keyframes closeEYE {
-        from {
-            transform: scaleY(1);
-        }
-
-        50% {
+        0% {
             transform: scaleY(0);
         }
 
-        to {
+        50% {
             transform: scaleY(1);
+        }
+
+        100% {
+            transform: scaleY(0);
         }
 
     } 
@@ -373,10 +467,16 @@
 <body>
     <div id="floor"></div>
     <div id="globe">
+     
         <div id="squid">
+            <div id="ground"></div>
+            <div id="rock1"></div>
+            <div id="rock2"></div>
+            <div id="rock3"></div>
             <div id="fish1"></div>
             <div id="fish2"></div>
             <div id="fish3"></div>
+            <div id="fish4"></div>
             <div id="s-body"></div>
             <div id="s-top"></div>
             <div id="eye1" class="eyes"></div>
@@ -389,7 +489,7 @@
 
         </div>
     </div>
-    <div id="base"></div>
+    <div id="base"> Humbolt Home</div>
 
 </body>
 
