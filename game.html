@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
+</head>
+<style>
+    #startScreen {
+        position: absolute;
+        top: 30vh;
+        left: 10vw;
+        width: 80vw;
+        height: 60vh;
+        background-color: hsla(188, 100%, 52%, 1);
+        overflow: hidden;
+        z-index: 0;
+        /* display: none; */
+        border: 3px black solid;
+    }
+
+    #gameScreen {
+        position: absolute;
+        top: 5vh;
+        left: 5vw;
+        width: 90vw;
+        height: 90vh;
+        background-color: lightgray;
+        background: linear-gradient(to bottom, hsl(198, 62%, 82%) 0%, hsl(194, 78%, 53%) 50%, hsl(197, 60%, 84%) 100%);
+        display: none;
+        overflow: hidden;
+        z-index: 0;
+
+    }
+
+    #endScreen {
+        position: absolute;
+        top: 30vh;
+        left: 10vw;
+        width: 80vw;
+        height: 40vh;
+        background-color: hsla(48, 100%, 53%, 1);
+        display: none;
+        z-index: 0;
+
+    }
+    #wireframeScreen {
+        position: absolute;
+        background-image: url(wireframe-garden.jpg);
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        display: none;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    #startBTN {
+        position: absolute;
+        top: 30%;
+        left: 10%;
+        width: 80%;
+        height: 40%;
+        background-color: hsla(102, 100%, 41%, 1);
+        cursor: pointer;
+        user-select: none;
+        border-radius: 25%;
+        font-family: 'Luckiest Guy', cursive;
+        animation: bounce 3s infinite;
+        /* display: none; block */
+
+    }
+
+    #exitBTN {
+        position: absolute;
+        top: 1%;
+        left: 90%;
+        width: 5%;
+        height: 5%;
+        border-radius: 20%;
+        background-color: darkgray;
+        cursor: pointer;
+        user-select: none;
+        z-index: 0;
+        text-align: center;
+        font-family: 'Luckiest Guy', cursive;
+        /* display: none; block */
+    }
+
+    #wireframeBTN {
+        position: absolute;
+        top: 55%;
+        left: 10%;
+        width: 80%;
+        height: 40%;
+        border-radius: 20%;
+        background-color: darkgray;
+        cursor: pointer;
+        user-select: none;
+        z-index: 2;
+        text-align: center;
+        font-size: 2em;
+        font-family: 'Luckiest Guy', cursive;
+        animation: bounce 2s 3s infinite;
+
+    }
+
+    #sun {
+        position: absolute;
+        top: 1%;
+        left: 74%;
+        width: 15%;
+        height: 15%;
+        border-radius: 50%;
+        background-color: orange;
+        user-select: none;
+        cursor: pointer;
+        z-index: 0;
+        /* display: none; block */
+    }
+
+    #fruitTop {
+        position: absolute;
+        top: 70%;
+        left: 15%;
+        width: 20%;
+        height: 20%;
+        /*background-color: pink;*/
+        background-image: url(watermelon-texture.jpg);
+        border: 2px darkgreen solid;
+        border-radius: 50%;
+        z-index: 1;
+
+    }
+
+    #wateringCan {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 10%;
+        height: 10%;
+        background-color: blue;
+        border: 2px darkblue solid;
+        border-radius: 20%;
+        cursor: pointer;
+        z-index: 0;
+
+    }
+
+    #waterspout {
+        position: absolute;
+        top: 48%;
+        left: 45%;
+        width: 10%;
+        height: 10%;
+        background-color: blue;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 0;
+        clip-path: polygon(0% 49%, 37% 33%, 81% 44%, 80% 59%, 38% 49%, 3% 58%);
+        border: 2px darkblue solid;
+    }
+
+    #grass {
+        position: absolute;
+        top: 55%;
+        left: -10%;
+        width: 110%;
+        height: 60%;
+        background-color: forestgreen;
+        clip-path: polygon(1% 99%, 0 22%, 26% 45%, 50% 18%, 73% 33%, 89% 30%, 100% 16%, 100% 100%);
+        z-index: 0;
+    }
+
+    #backgrass {
+        position: absolute;
+        top: 30%;
+        left: -10%;
+        width: 110%;
+        height: 60%;
+        background-color: darkgreen;
+        clip-path: polygon(1% 100%, 0% 44%, 26% 40%, 48% 49%, 67% 39%, 83% 33%, 100% 34%, 100% 100%);
+        z-index: -1;
+
+
+    }
+
+    #tree {
+        position: absolute;
+        top: 5%;
+        left: 0%;
+        width: 40%;
+        height: 80%;
+        background-color: hsla(24, 46%, 55%, 1);
+        clip-path: polygon(0 0, 44% 0, 44% 73%, 79% 100%, 0% 100%);
+        z-index: 0;
+    }
+
+    #leaf-1 {
+        position: absolute;
+        top: 5%;
+        left: 0%;
+        width: 30%;
+        height: 30%;
+        background-color: hsla(123, 68%, 55%, 1);
+        border-radius: 50%;
+        z-index: 0;
+    }
+
+    #leaf-2 {
+        position: absolute;
+        top: -10%;
+        left: -5%;
+        width: 30%;
+        height: 30%;
+        background-color: hsla(123, 68%, 55%, 1);
+        border-radius: 50%;
+        z-index: 0;
+    }
+
+    #leaf-3 {
+        position: absolute;
+        top: -10%;
+        left: 15%;
+        width: 30%;
+        height: 30%;
+        background-color: hsla(123, 68%, 55%, 1);
+        border-radius: 50%;
+        z-index: 0;
+    }
+
+    #star-1 {
+        position: absolute;
+        top: 0%;
+        left: 55%;
+        width: 9%;
+        height: 9%;
+        background-color: white;
+        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        z-index: -1;
+        display: none;
+    }
+
+    #star-2 {
+        position: absolute;
+        top: 20%;
+        left: 35%;
+        width: 9%;
+        height: 9%;
+        background-color: white;
+        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        z-index: 1;
+        display: none;
+    }
+
+    #star-3 {
+        position: absolute;
+        top: 15%;
+        left: 65%;
+        width: 9%;
+        height: 9%;
+        background-color: white;
+        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        z-index: 1;
+        display: none;
+    }
+
+    #star-4 {
+        position: absolute;
+        top: 35%;
+        left: 55%;
+        width: 9%;
+        height: 9%;
+        background-color: white;
+        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        z-index: 1;
+        display: none;
+    }
+
+    #star-5 {
+        position: absolute;
+        top: 35%;
+        left: 85%;
+        width: 9%;
+        height: 9%;
+        background-color: white;
+        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        z-index: 1;
+        display: none;
+    }
+
+    #cloud-1 {
+        position: absolute;
+        top: 10%;
+        left: 40%;
+        width: 10%;
+        height: 10%;
+        background-color: white;
+        border-radius: 50%;
+        z-index: -1;
+    }
+
+    #cloud-2 {
+        position: absolute;
+        top: 10%;
+        left: 49%;
+        width: 10%;
+        height: 10%;
+        background-color: white;
+        border-radius: 50%;
+        z-index: -1;
+    }
+
+    #cloud-3 {
+        position: absolute;
+        top: 4%;
+        left: 45%;
+        width: 10%;
+        height: 10%;
+        background-color: white;
+        border-radius: 50%;
+        z-index: -1;
+    }
+
+    #cloud-4 {
+        position: absolute;
+        top: 30%;
+        left: 80%;
+        width: 10%;
+        height: 10%;
+        background-color: white;
+        border-radius: 50%;
+        z-index: -1;
+    }
+
+    #cloud-5 {
+        position: absolute;
+        top: 35%;
+        left: 75%;
+        width: 10%;
+        height: 10%;
+        background-color: white;
+        border-radius: 50%;
+        z-index: -1;
+    }
+
+    #cloud-6 {
+        position: absolute;
+        top: 35%;
+        left: 85%;
+        width: 10%;
+        height: 10%;
+        background-color: white;
+        border-radius: 50%;
+        z-index: -1;
+    }
+
+
+
+    #moon {
+        position: absolute;
+        top: 1%;
+        left: 74%;
+        width: 14%;
+        height: 15%;
+        background-image: url(TexturesCom_ConcreteRough0047_S.jpg);
+        border-radius: 50%;
+        display: none;
+        z-index: 0;
+        cursor: pointer;
+        animation: bounce 4s infinite;
+
+    }
+
+    #restartBTN {
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        width: 80%;
+        height: 40%;
+        background-color: aqua;
+        border-radius: 20%;
+        display: none;
+        z-index: 1;
+        cursor: pointer;
+        text-align: center;
+        font-size: 2em;
+        font-family: 'Luckiest Guy', cursive;
+        animation: bounce 2s infinite;
+    }
+
+    .leaves {
+        animation: wind 3s infinite, bounce 4s infinite;
+    }
+
+    .cloud {
+        animation: windCloud 8s infinite, bounce 4s 5s;
+    }
+
+    .star {
+        animation: shine 3s infinite;
+    }
+
+    @keyframes wind {
+        from {
+            transform: translateX(0);
+        }
+
+        50% {
+            transform: translateX(-10%);
+        }
+
+        to {
+            transform: translateX(0%);
+        }
+    }
+
+    @keyframes windCloud {
+        from {
+            transform: translateX(-100%);
+        }
+
+        50% {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-100%);
+        }
+    }
+
+    @keyframes shine {
+        from {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0;
+        }
+
+    }
+
+
+    @keyframes bounce {
+
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+            transform: translateY(0);
+        }
+
+        40% {
+            transform: translateY(-30px);
+        }
+
+        60% {
+            transform: translateY(-15px);
+        }
+    }
+</style>
+
+<body>
+    <div id="startScreen">
+        <div id="startBTN"></div>
+    </div>
+
+
+    <div id="gameScreen">
+        <div id="grass"></div>
+        <div id="backgrass"></div>
+        <div id="hill"></div>
+        <div id="tree"></div>
+        <div id="leaf-1" class="leaves"></div>
+        <div id="leaf-2" class="leaves"></div>
+        <div id="leaf-3" class="leaves"></div>
+        <div id="star-1" class="star"></div>
+        <div id="star-2" class="star"></div>
+        <div id="star-3" class="star"></div>
+        <div id="star-4" class="star"></div>
+        <div id="star-5" class="star"></div>
+        <div id="cloud-1" class="cloud"></div>
+        <div id="cloud-2" class="cloud"></div>
+        <div id="cloud-3" class="cloud"></div>
+        <div id="cloud-4" class="cloud"></div>
+        <div id="cloud-5" class="cloud"></div>
+        <div id="cloud-6" class="cloud"></div>
+        <div id="sun"></div>
+        <div id="moon"></div>
+        <div id="fruitTop"></div>
+        <div id="wateringCan"></div>
+        <div id="waterspout"></div>
+        <div id="exitBTN"> EXIT </div>
+    </div>
+
+
+    <div id="endScreen">
+        <div id="restartBTN">Click to Restart</div>
+        <div id="wireframeBTN">Click for Wireframe</div>
+    </div>
+    <div id="wireframeScreen">
+       
+    </div>
+    <script>
+        var myMusic =
+            document.querySelector("#music");
+        var myStartScreen;
+        myStartScreen =
+            document.querySelector("#startScreen");
+        var myGameScreen;
+        myGameScreen =
+            document.querySelector("#gameScreen");
+        var myStartBTN;
+        myStartBTN =
+            document.querySelector("#startBTN");
+        var myExitBTN;
+        myExitBTN =
+            document.querySelector("#exitBTN");
+        var myWireframe;
+        myWireframe =
+            document.querySelector("#wireframeBTN")
+        var myEndScreen;
+        myEndScreen =
+            document.querySelector("#endScreen");
+        var myRestartBTN;
+        myRestartBTN =
+            document.querySelector("#restartBTN");
+        var mySpout;
+        mySpout =
+            document.querySelector("#waterspout");
+        var mySun;
+        mySun =
+            document.querySelector("#sun");
+        mySun.addEventListener("click", nightTime, false);
+        var myCloud1;
+        myCloud1 =
+            document.querySelector("#cloud-1");
+        var myCloud2;
+        myCloud2 =
+            document.querySelector("#cloud-2");
+        var myCloud3;
+        myCloud3 =
+            document.querySelector("#cloud-3");
+        var myCloud4;
+        myCloud4 =
+            document.querySelector("#cloud-4");
+        var myCloud5;
+        myCloud5 =
+            document.querySelector("#cloud-5");
+        var myCloud6;
+        myCloud6 =
+            document.querySelector("#cloud-6");
+        var myStar1;
+        myStar1 =
+            document.querySelector("#star-1");
+        var myStar2;
+        myStar2 =
+            document.querySelector("#star-2");
+        var myStar3;
+        myStar3 =
+            document.querySelector("#star-3");
+        var myStar4;
+        myStar4 =
+            document.querySelector("#star-4");
+        var myStar5;
+        myStar5 =
+            document.querySelector("#star-5");
+        var myMoon;
+        myMoon =
+            document.querySelector("#moon")
+        var myWateringCan;
+        myWateringCan =
+            document.querySelector("#wateringCan");
+        var wireScreen;
+        wireScreen =
+            document.querySelector("#wireframeScreen")
+        let positionY = 1;
+        var fruitSize = innerHeight * 2 + innerWidth * 2;
+        var myFruitTop;
+        myFruitTop = document.querySelector("#fruitTop"), innerHeight = 0, innerWidth = 0;
+
+        myWateringCan.addEventListener("click", growFruit, false);
+        myWateringCan.addEventListener("click", moveCan, false);
+
+        myStartBTN.innerHTML = "START";
+        myStartBTN.style.textAlign = "center";
+        myStartBTN.style.fontSize = "3em";
+        myStartBTN.addEventListener("click", hideStartShowGame, false);
+
+        myExitBTN.addEventListener("click", hideGameShowEnd, false);
+        myMoon.addEventListener("click", dayTime, false);
+
+        function growFruit() {
+            positionY = positionY + 0.1;
+            myFruitTop.style.transform = ("scale(" + positionY + ")");
+        }
+
+        function moveCan() {
+            mySpout.style.transform = ("rotate(-45deg)");
+            myWateringCan.style.transform = ("rotate(-45deg)");
+            mySpout.style.transform = ("translateY(50%)");
+
+        }
+
+        function nightTime() {
+            myGameScreen.style.background = "none";
+            myGameScreen.style.backgroundColor = "darkblue";
+            myStar1.style.display = "block";
+            myStar2.style.display = "block";
+            myStar3.style.display = "block";
+            myStar4.style.display = "block";
+            myStar5.style.display = "block";
+            myCloud1.style.display = "none";
+            myCloud2.style.display = "none";
+            myCloud3.style.display = "none";
+            myCloud4.style.display = "none";
+            myCloud5.style.display = "none";
+            myCloud6.style.display = "none";
+            myMoon.style.display = "block";
+            mySun.style.display = "none";
+        }
+
+        function dayTime() {
+            myGameScreen.style.background = "linear-gradient(to bottom, hsl(198, 62%, 82%) 0%, hsl(194, 78%, 53%) 50%, hsl(197, 60%, 84%) 100%)";
+            myGameScreen.style.backgroundColor = "none";
+            myStar1.style.display = "none";
+            myStar2.style.display = "none";
+            myStar3.style.display = "none";
+            myStar4.style.display = "none";
+            myStar5.style.display = "none";
+            myCloud1.style.display = "block";
+            myCloud2.style.display = "block";
+            myCloud3.style.display = "block";
+            myCloud4.style.display = "block";
+            myCloud5.style.display = "block";
+            myCloud6.style.display = "block";
+            myMoon.style.display = "none";
+            mySun.style.display = "block";
+        }
+
+        function hideStartShowGame() {
+            myStartScreen.style.display = "none";
+            myGameScreen.style.display = "block";
+
+        }
+
+        function hideGameShowEnd() {
+            myGameScreen.style.display = "none";
+            myEndScreen.style.display = "block";
+            myRestartBTN.style.display = "block";
+        }
+        myRestartBTN.addEventListener("click", hideEndShowStart, false);
+        myWireframe.addEventListener("click", hideEndShowWireframe, false);
+
+        function hideEndShowStart() {
+            myEndScreen.style.display = "none";
+            myStartScreen.style.display = "block";
+
+        }
+        
+        function hideEndShowWireframe() {
+            wireScreen.style.display = "block"
+            myEndScreen.style.display = "none"
+            myRestartBTN.style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
