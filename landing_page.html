@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -8,115 +9,118 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <title>The Project</title>
+    <title>The Landing Page</title>
     <style>
         h1 {
             text-align: center;
             height: 50%;
+            font-size: 6em;
         }
-        .btn btn-primary btn-lg {
-           text-align: center;
-        }
-        .carousel-item {
-            background-image: url(![alt text](http://url/to/https://github.com/XseriousPrime/www/blob/master/landingPic.jpg?raw=true);
-        }
-    </style>
-  </head>
-  <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Explore</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+        .btn btn-primary btn-lg {
+            text-align: center;
+        }
+
+        #startBTN {
+            position: relative;
+            margin: 50px;
+            background-color: coral;
+            border: none;
+            font-size: 2em;
+        }
+
+        .lead {
+            font-size: 4em;
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Explore</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Prototype</a>
+                </li>
+                <li class="nav-item dropdown">
+                </li>
+            </ul>
+
         </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-    <h1 id="heading">The F.O.G Project</h1>
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="landingPic.jpg" class="d-block w-100" alt="...">
+    </nav>
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide""carousel-fade" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../images/landingPic%20(1).jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../images/landingPic%20(1).jpg" class="d-block w-100" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../images/landingPic%20(1).jpg" class="d-block w-100" class="d-block w-100" alt="...">
+            </div>
+            <div class="main-text hidden-xs">
+                <div id="startIntro" class="col-md-12 text-center">
+                    <h1>
+                        Gamer Head</h1>
+                    <h3>
+                        This is Gamer Head, an app just for you! Let us jump in and get started!
+                    </h3>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="carousel-item">
-      <img src="landingPic.jpg" class="d-block w-100" alt="...">
+
+
+    <div class="jumbotron">
+        <p class="lead">This is an app made just for the gamer inside of you. </p>
+        <hr class="my-4">
+
+        <div class="d-flex justify-content-center">
+            <button id="startBTN" type="button" href="https://xseriousprime.github.io/prototype/GameHead.html" class="btn btn-primary btn-lg">This Way to the Prototype</button>
+        </div>
+
+        <p>Have you ever been irritated by players who don't match your skill set? Well as a gamer myself, i find this to be a issue that ruins my gaming experience. That is why I made an app to fix it. Here's how: </p>
     </div>
-    <div class="carousel-item">
-      <img src="landingPic.jpg" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-<div class="jumbotron">
-  <h1 class="display-4">Hello, gamer!</h1>
-  <p class="lead">This is an app made just for the gamer inside of you.   </p>
-  <hr class="my-4">
-  
-  <p>Have you ever been irritated by players who don't match your skill set? Well as a gamer myself, i find this to be a issue that ruins my gaming experience. That is why I made an app to fix it. Here's how: </p>
-</div>
-   
+
     <div class="row">
-  <div class="col-4">
-    <div class="list-group" id="list-tab" role="tablist">
-      
-      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Why?</a>
-      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Research</a>
-      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Method</a>
+        <div class="col-4">
+            <div class="list-group" id="list-tab" role="tablist">
+
+                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Why?</a>
+                <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Research</a>
+                <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Method</a>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="tab-content" id="nav-tabContent">
+
+                <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">I started the research with some personal brainstorming. I wanted to reach out to something that I experience everyday. I chose the gaming community because it is really close to my heart. I have held a controller in my hand from since I was in diapers playing Pajama Sam. I finally decided that I wanted to make an app that improved the gamer's lifestyle. </div>
+                <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">To understand what gamer's needed I went to the source. Luckly I had many sources avaliable to me through my own friends across the headset. I asked them multiple questions as, "what bothers you about gaming?" and with a follow up question like "how can we improve that issue?". With the information I had it was now time to pick a research method and go from there. </div>
+                <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">I chose the method "The Five Whys". I have previously used this method for a ethnographic research I did on my love for video games and it opened up a lot of undiscovered doors for me. The person I interviewed is my boyfriend Mahan. Looking at how we met over the mic I thought he would be the perfect canidate for my research. After the interview with Mahan I found out that he would want a app that would help us connect with gamers of a similar skill level and interest. This help me finalize the idea of The Project. The Project will be an app that connects people with similar skill level. </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="col-8">
-    <div class="tab-content" id="nav-tabContent">
-      
-      <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">I started the research with some personal brainstorming. I wanted to reach out to something that I experience everyday. I chose the gaming community because it is really close to my heart. I have held a controller in my hand from since I was in diapers playing Pajama Sam. I finally decided that I wanted to make an app that improved the gamer's lifestyle. </div>
-      <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">To understand what gamer's needed I went to the source. Luckly I had many sources avaliable to me through my own friends across the headset. I asked them multiple questions as, "what bothers you about gaming?" and with a follow up question like "how can we improve that issue?". With the information I had it was now time to pick a research method and go from there.  </div>
-      <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">I chose the method "The Five Whys". I have previously used this method for a ethnographic research I did on my love for video games and it opened up a lot of undiscovered doors for me. The person I interviewed is my boyfriend Mahan. Looking at how we met over the mic I thought he would be the perfect canidate for my research. After the interview with Mahan I found out that he would want a app that would help us connect with gamers of a similar skill level and interest. This help me finalize the idea of The Project. The Project will be an app that connects people with similar skill level.  </div>
-    </div>
-  </div>
-</div>
-     <a class="btn btn-primary btn-lg" href="https://xseriousprime.github.io/www/prototype.html" role="button">Prototype</a>
+    <a class="btn btn-primary btn-lg" href="https://xseriousprime.github.io/www/prototype.html" role="button">Prototype</a>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  </body>
+
+
+</body>
+
 </html>
